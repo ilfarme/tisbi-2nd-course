@@ -61,7 +61,7 @@ end;
 
 procedure TCalc.bChange(Sender: TObject);
 begin
-  If b.Text='' then a.Text:='1';
+  If b.Text='' then b.Text:='1';
   second_coef:=StrToFloat(b.Text);
 end;
 
@@ -69,25 +69,24 @@ procedure TCalc.ButtonCalculateClick(Sender: TObject);
 Var D, X, result1,result2 : Real;
 Begin
 If first_coef=0 Then
-   If second_coef=0 Then
-              If third_coef=0 Then ShowMessage('X - любое число')
-                  Else ShowMessage('Корней нет! --')
-        Else
-        Begin
-        X:=-third_coef/second_coef;
-        x1.Caption:=FloatToStr(X);
-        x2.Caption:='';
-        End
-   Else
-   Begin
+Begin
+     X:=-third_coef/second_coef;
+     x2.Caption:=FloatToStr(X);
+     x1.Caption:='ОТВЕТ: ';
+End else
+If second_coef=0 Then
+Begin
+     x2.Caption:='Нет решения.';
+     x1.Caption:='ОТВЕТ:';
+End else begin
    D:=second_coef*second_coef-4*first_coef*third_coef;
-   If D<0 Then ShowMessage('Корней нет! ++')
+   If D<0 Then ShowMessage('Корней нет!')
       Else
       Begin
       result1:=(-second_coef+SQRT(D))/2/first_coef;
       result2:=(-second_coef-SQRT(D))/2/first_coef;
-      x1.Caption:=FloatToStr(result1);
-      x2.Caption:=FloatToStr(result2);
+      x1.Caption:='X1= '+ FloatToStr(result2);
+      x2.Caption:='X2= '+FloatToStr(result1);
       End;
    End;
 End;
@@ -99,7 +98,7 @@ end;
 
 procedure TCalc.cChange(Sender: TObject);
 begin
-  If c.Text='' then a.Text:='1';
+  If c.Text='' then c.Text:='1';
   third_coef:=StrToFloat(c.Text);
 end;
 
