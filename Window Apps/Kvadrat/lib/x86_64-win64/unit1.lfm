@@ -1,13 +1,13 @@
-object Form1: TForm1
-  Left = 328
-  Height = 276
-  Top = 156
+object Calc: TCalc
+  Left = 253
+  Height = 278
+  Top = 359
   Width = 413
   Caption = 'Нахождение корней квадратного уравнения'
-  ClientHeight = 276
+  ClientHeight = 278
   ClientWidth = 413
   LCLVersion = '1.6.4.0'
-  object Panel1: TPanel
+  object MainPanel: TPanel
     Left = -8
     Height = 288
     Top = -8
@@ -15,7 +15,7 @@ object Form1: TForm1
     ClientHeight = 288
     ClientWidth = 512
     TabOrder = 0
-    object Label1: TLabel
+    object Heading: TLabel
       Left = 77
       Height = 18
       Top = 64
@@ -45,7 +45,7 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 0
     end
-    object Label2: TLabel
+    object equation1: TLabel
       Left = 120
       Height = 21
       Top = 101
@@ -59,7 +59,7 @@ object Form1: TForm1
       Font.Style = [fsItalic]
       ParentColor = False
       ParentFont = False
-      OnClick = Label2Click
+      OnClick = equation1Click
     end
     object b: TEdit
       Left = 184
@@ -76,7 +76,7 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 1
     end
-    object Label3: TLabel
+    object equation2: TLabel
       Left = 232
       Height = 21
       Top = 101
@@ -90,7 +90,7 @@ object Form1: TForm1
       Font.Style = [fsItalic]
       ParentColor = False
       ParentFont = False
-      OnClick = Label2Click
+      OnClick = equation1Click
     end
     object c: TEdit
       Left = 272
@@ -107,7 +107,7 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 2
     end
-    object Label4: TLabel
+    object equation3: TLabel
       Left = 320
       Height = 21
       Top = 101
@@ -121,9 +121,9 @@ object Form1: TForm1
       Font.Style = [fsItalic]
       ParentColor = False
       ParentFont = False
-      OnClick = Label2Click
+      OnClick = equation1Click
     end
-    object Button1: TButton
+    object ButtonCalculate: TButton
       Left = 160
       Height = 40
       Top = 136
@@ -134,16 +134,17 @@ object Form1: TForm1
       Font.Name = 'Impact'
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
-      OnClick = Button1Click
+      OnClick = ButtonCalculateClick
       ParentFont = False
       TabOrder = 3
     end
-    object Button2: TButton
+    object ButtonClose: TButton
       Left = 152
       Height = 25
       Top = 248
       Width = 123
       Caption = 'Закрыть программу'
+      OnClick = ButtonCloseClick
       TabOrder = 4
     end
     object x1: TLabel

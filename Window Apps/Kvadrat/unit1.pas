@@ -10,26 +10,27 @@ uses
 
 type
 
-  { TForm1 }
+  { TCalc }
 
-  TForm1 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
+  TCalc = class(TForm)
+    ButtonCalculate: TButton;
+    ButtonClose: TButton;
     a: TEdit;
     b: TEdit;
     c: TEdit;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
+    Heading: TLabel;
+    equation1: TLabel;
+    equation2: TLabel;
+    equation3: TLabel;
     x1: TLabel;
-    Panel1: TPanel;
+    MainPanel: TPanel;
     x2: TLabel;
     procedure aChange(Sender: TObject);
     procedure bChange(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure ButtonCalculateClick(Sender: TObject);
+    procedure ButtonCloseClick(Sender: TObject);
     procedure cChange(Sender: TObject);
-    procedure Label2Click(Sender: TObject);
+    procedure equation1Click(Sender: TObject);
   private
     { private declarations }
   public
@@ -37,7 +38,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  Calc: TCalc;
   first_coef,second_coef,third_coef:Real;
   result:string;
 
@@ -45,26 +46,26 @@ implementation
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TCalc }
 
-procedure TForm1.Label2Click(Sender: TObject);
+procedure TCalc.equation1Click(Sender: TObject);
 begin
 
 end;
 
-procedure TForm1.aChange(Sender: TObject);
+procedure TCalc.aChange(Sender: TObject);
 begin
   If a.Text='' then a.Text:='1';
   first_coef:=StrToFloat(a.Text);
 end;
 
-procedure TForm1.bChange(Sender: TObject);
+procedure TCalc.bChange(Sender: TObject);
 begin
-  If a.Text='' then a.Text:='1';
-  second_coef:=StrToFloat(a.Text);
+  If b.Text='' then a.Text:='1';
+  second_coef:=StrToFloat(b.Text);
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TCalc.ButtonCalculateClick(Sender: TObject);
 Var D, X, result1,result2 : Real;
 Begin
 If first_coef=0 Then
@@ -79,7 +80,7 @@ If first_coef=0 Then
         End
    Else
    Begin
-   D:=(second_coef*second_coef)-4*first_coef*third_coef;
+   D:=second_coef*second_coef-4*first_coef*third_coef;
    If D<0 Then ShowMessage('Корней нет! ++')
       Else
       Begin
@@ -91,10 +92,15 @@ If first_coef=0 Then
    End;
 End;
 
-procedure TForm1.cChange(Sender: TObject);
+procedure TCalc.ButtonCloseClick(Sender: TObject);
 begin
-  If a.Text='' then a.Text:='1';
-  third_coef:=StrToFloat(a.Text);
+  close;
+end;
+
+procedure TCalc.cChange(Sender: TObject);
+begin
+  If c.Text='' then a.Text:='1';
+  third_coef:=StrToFloat(c.Text);
 end;
 
 end.
