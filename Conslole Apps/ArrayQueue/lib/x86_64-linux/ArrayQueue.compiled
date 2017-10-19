@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1454174389"/>
-  <Params Value=" -MObjFPC -Scghi -Cg -O1 -g -gl -l -vewnhibq &quot;-Fi/home/seven_13th/tisbi-2nd-course/Conslole Apps/ArrayQueue/lib/x86_64-linux&quot; &quot;-Fu/home/seven_13th/tisbi-2nd-course/Conslole Apps/ArrayQueue/&quot; &quot;-FU/home/seven_13th/tisbi-2nd-course/Conslole Apps/ArrayQueue/lib/x86_64-linux/&quot; ArrayQueue.lpr"/>
-</CONFIG>
