@@ -1,0 +1,415 @@
+program project1;
+
+type
+  pList2Item = ^TList2Item;
+
+  TList2Item = record
+    info: integer;
+    Next: pList2Item;
+    prev: pList2Item;
+  end;
+var
+  pFirst, pNext, pTemp, pNew, pPrev: pList2Item;
+  ainf, n, menu: integer;
+
+  procedure print;
+  begin
+    writeln;
+    if pFirst = nil then
+      Write('Список пустой!')
+    else
+    begin
+      pTemp := pFirst^.Next;
+      Write('Элементы: ');
+      Write(pFirst^.info, ' ');
+      while pTemp <> pFirst do
+      begin
+        Write(pTemp^.info, ' ');
+        pTemp := pTemp^.Next;
+      end;
+    end;
+    writeln;
+    writeln;
+  end;
+
+  procedure vivodDlyaPoiska;
+  begin
+    writeln;
+    if pFirst = nil then
+      Write('В список не внесли ни один элемент!')
+    else
+    begin
+      pTemp := pFirst^.Next;
+      Write('Элементы находящиеся в списке: ');Write(pFirst^.info, ' ');
+      while pTemp <> pFirst do
+      begin
+        Write(pTemp^.info, ' ');
+        pTemp := pTemp^.Next;
+      end;
+    end;
+    writeln;
+    writeln;
+  end;
+
+  function search(ainf: integer): pList2Item;
+  begin
+    if pFirst = nil then
+      writeln('Список пустой!')
+    else
+    begin
+      pTemp := pFirst;
+      while (pTemp <> nil) do
+      begin
+        if (pTemp^.info = ainf) then
+        begin
+          Result := pTemp;
+          break;
+        end
+        else
+        begin
+          pTemp := pTemp^.Next;
+          Result := nil;
+        end;
+      end;
+    end;
+    print;
+  end;
+
+  procedure pushAfter;
+  begin
+    if pFirst = nil then
+    begin
+      Write('Введите новый элемент: ');
+      ReadLn(n);
+      new(pFirst);
+      pFirst^.info := n;
+      pFirst^.Next := pFirst;
+      pFirst^.prev := pFirst;
+      print;
+    end
+    else
+    begin
+      vivodDlyaPoiska;
+      Write('Введите искомый элемент: ');readln(ainf);
+      pTemp := search(ainf);
+      if (pTemp <> nil) then
+      begin
+        Write('Введите новый элемент: ');readln(n);
+        new(pNew);
+        pNew^.info := n;
+        pNew^.Next := pTemp^.Next;
+        pNew^.prev := pTemp;
+        pTemp^.Next^.prev := pNew;
+        pTemp^.Next := pNew;
+        print;
+      end
+      else
+        writeln('Добавление не возможно!');
+    end;
+  end;
+
+  procedure pushBefore;
+  begin
+    if pFirst = nil then
+    begin
+      Write('Введите новый элемент: ');readln(n);
+      new(pFirst);
+      pFirst^.info := n;
+      pFirst^.Next := pFirst;
+      pFirst^.prev := pFirst;
+      print;
+    end
+    else
+    begin
+      vivodDlyaPoiska;
+      Write('Введите искомый элемент: ');readln(ainf);
+      pTemp := search(ainf);
+      if (pTemp <> nil) then
+      begin
+        Write('Введите новый элемент: ');readln(n);
+        if pTemp <> pFirst then
+        begin
+          new(pNew);
+          pNew^.info := n;
+          pNew^.Next := pTemp;
+          pNew^.prev := pTemp^.prev;
+          pTemp^.prev := pNew;
+          pNew^.prev^.Next := pNew;
+        end
+        else
+        begin
+          new(pFirst);
+          pFirst^.info := n;
+          pFirst^.Next := pTemp;
+          pFirst^.prev := pTemp^.prev;
+          pTemp^.prev := pFirst;
+          pFirst^.prev^.Next := pFirst;
+        end;
+        print;
+      end
+      else
+        writeln('Добавление не возможно!');
+    end;
+  end;
+
+  procedure pop;
+  begin
+    vivodDlyaPoiska;
+    if pFirst = nil then
+      writeln('Элементов не обнаружено!')
+    else
+    begin
+      Write('Введите удаляемый элемент: ');readln(ainf);
+      pTemp := search(ainf);
+      if pTemp <> nil then
+      begin
+        if pTemp <> pFirst then
+        begin
+          pTemp^.Next^.prev := pTemp^.prev;
+          pTemp^.prev^.Next := pTemp^.Next;
+          dispose(pTemp);
+        end
+        else
+        begin
+          if pFirst^.Next = pFirst then
+          begin
+            pFirst := nil;
+          end
+          else
+          begin
+            pTemp^.Next^.prev := pTemp^.prev;
+            pTemp^.prev^.Next := pTemp^.Next;
+            pFirst := pTemp^.Next;
+            dispose(pTemp);
+          end;
+        end;
+        print;
+      end
+      else
+        writeln('Удаление не возможно!');
+    end;
+  end;
+
+begin
+  pFirst := nil;
+  repeat
+    writeln('1 - Добавление элемента после заданного');
+    writeln('2 - Добавление элемента перед заданным');
+    writeln('3 - Удаление элемента из списка');
+    writeln('4 - Выход');
+    readln(menu);
+    case menu of
+      1: pushAfter;
+      2: pushBefore;
+      3: pop;
+      4: print;
+    end;
+  until menu = 4;
+end.program List2;
+
+type
+  pList2Item = ^TList2Item;
+
+  TList2Item = record
+    info: integer;
+    Next: pList2Item;
+    prev: pList2Item;
+  end;
+var
+  pFirst, pNext, pTemp, pNew, pPrev: pList2Item;
+  ainf, n, menu: integer;
+
+  procedure print;
+  begin
+    writeln;
+    if pFirst = nil then
+      Write('Список пустой!')
+    else
+    begin
+      pTemp := pFirst^.Next;
+      Write('Элементы: ');
+      Write(pFirst^.info, ' ');
+      while pTemp <> pFirst do
+      begin
+        Write(pTemp^.info, ' ');
+        pTemp := pTemp^.Next;
+      end;
+    end;
+    writeln;
+    writeln;
+  end;
+
+  procedure vivodDlyaPoiska;
+  begin
+    writeln;
+    if pFirst = nil then
+      Write('В список не внесли ни один элемент!')
+    else
+    begin
+      pTemp := pFirst^.Next;
+      Write('Элементы находящиеся в списке: ');Write(pFirst^.info, ' ');
+      while pTemp <> pFirst do
+      begin
+        Write(pTemp^.info, ' ');
+        pTemp := pTemp^.Next;
+      end;
+    end;
+    writeln;
+    writeln;
+  end;
+
+  function search(ainf: integer): pList2Item;
+  begin
+    if pFirst = nil then
+      writeln('Список пустой!')
+    else
+    begin
+      pTemp := pFirst;
+      while (pTemp <> nil) do
+      begin
+        if (pTemp^.info = ainf) then
+        begin
+          Result := pTemp;
+          break;
+        end
+        else
+        begin
+          pTemp := pTemp^.Next;
+          Result := nil;
+        end;
+      end;
+    end;
+    print;
+  end;
+
+  procedure pushAfter;
+  begin
+    if pFirst = nil then
+    begin
+      Write('Введите новый элемент: ');
+      ReadLn(n);
+      new(pFirst);
+      pFirst^.info := n;
+      pFirst^.Next := pFirst;
+      pFirst^.prev := pFirst;
+      print;
+    end
+    else
+    begin
+      vivodDlyaPoiska;
+      Write('Введите искомый элемент: ');readln(ainf);
+      pTemp := search(ainf);
+      if (pTemp <> nil) then
+      begin
+        Write('Введите новый элемент: ');readln(n);
+        new(pNew);
+        pNew^.info := n;
+        pNew^.Next := pTemp^.Next;
+        pNew^.prev := pTemp;
+        pTemp^.Next^.prev := pNew;
+        pTemp^.Next := pNew;
+        print;
+      end
+      else
+        writeln('Добавление не возможно!');
+    end;
+  end;
+
+  procedure pushBefore;
+  begin
+    if pFirst = nil then
+    begin
+      Write('Введите новый элемент: ');readln(n);
+      new(pFirst);
+      pFirst^.info := n;
+      pFirst^.Next := pFirst;
+      pFirst^.prev := pFirst;
+      print;
+    end
+    else
+    begin
+      vivodDlyaPoiska;
+      Write('Введите искомый элемент: ');readln(ainf);
+      pTemp := search(ainf);
+      if (pTemp <> nil) then
+      begin
+        Write('Введите новый элемент: ');readln(n);
+        if pTemp <> pFirst then
+        begin
+          new(pNew);
+          pNew^.info := n;
+          pNew^.Next := pTemp;
+          pNew^.prev := pTemp^.prev;
+          pTemp^.prev := pNew;
+          pNew^.prev^.Next := pNew;
+        end
+        else
+        begin
+          new(pFirst);
+          pFirst^.info := n;
+          pFirst^.Next := pTemp;
+          pFirst^.prev := pTemp^.prev;
+          pTemp^.prev := pFirst;
+          pFirst^.prev^.Next := pFirst;
+        end;
+        print;
+      end
+      else
+        writeln('Добавление не возможно!');
+    end;
+  end;
+
+procedure pop;
+  begin
+    vivodDlyaPoiska;
+    if pFirst = nil then
+      writeln('Элементов не обнаружено!')
+    else
+    begin
+      Write('Введите удаляемый элемент: ');readln(ainf);
+      pTemp := search(ainf);
+      if pTemp <> nil then
+      begin
+        if pTemp <> pFirst then
+        begin
+          pTemp^.Next^.prev := pTemp^.prev;
+          pTemp^.prev^.Next := pTemp^.Next;
+          dispose(pTemp);
+        end
+        else
+        begin
+          if pFirst^.Next = pFirst then
+          begin
+            pFirst := nil;
+          end
+          else
+          begin
+            pTemp^.Next^.prev := pTemp^.prev;
+            pTemp^.prev^.Next := pTemp^.Next;
+            pFirst := pTemp^.Next;
+            dispose(pTemp);
+          end;
+        end;
+        print;
+      end
+      else
+        writeln('Удаление не возможно!');
+    end;
+  end;
+
+begin
+  pFirst := nil;
+  repeat
+    writeln('1. Добавление элемента ПОСЛЕ заданного');
+    writeln('2. Добавление элемента ПЕРЕД заданным');
+    writeln('3. Удаление элемента из списка');
+    writeln('4. Вывод списка на экран');
+    readln(menu);
+    case menu of
+      1: pushAfter;
+      2: pushBefore;
+      3: pop;
+      4: print;
+    end;
+  until menu = 4;
+end.
