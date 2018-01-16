@@ -41,6 +41,7 @@ var
   Calc: TCalc;
   first_coef,second_coef,third_coef:Real;
   result:string;
+  a1,b1,c1:boolean;
 
 implementation
 
@@ -68,6 +69,17 @@ end;
 procedure TCalc.ButtonCalculateClick(Sender: TObject);
 Var D, X, result1,result2 : Real;
 Begin
+  a1:=false; b1:=false; c1:=false;
+  If first_coef = 0 then a1:=true;
+  If second_coef = 0 then b1:=true;
+  If third_coef = 0 then c1:=true;
+  If (a1 and b1 and c1 = true) then begin
+  x1.Caption:='';
+  x2.Caption:='';
+  ShowMessage('Ошибка! Введите корректные коэффициенты.')
+  end
+  else
+  Begin
 If first_coef=0 Then
 Begin
      X:=-third_coef/second_coef;
@@ -76,20 +88,31 @@ Begin
 End else
 If second_coef=0 Then
 Begin
-     x2.Caption:='Нет решения.';
-     x1.Caption:='ОТВЕТ:';
+     x1.Caption:='';
+     x2.Caption:='';
+     ShowMessage('Нет решения!');
 End else begin
    D:=second_coef*second_coef-4*first_coef*third_coef;
-   If D<0 Then ShowMessage('Корней нет!')
+   If D<0 Then begin
+   x1.Caption:='';
+   x2.Caption:='';
+   ShowMessage('Корней нет!');
+   end
       Else
       Begin
       result1:=(-second_coef+SQRT(D))/2/first_coef;
       result2:=(-second_coef-SQRT(D))/2/first_coef;
+      if (result1 = result2)then begin
+      x1.Caption:='Ответ: ';
+      x2.Caption:='X = '+FloatToStr(result2);
+      end else begin
       x1.Caption:='X1= '+ FloatToStr(result2);
       x2.Caption:='X2= '+FloatToStr(result1);
       End;
    End;
 End;
+end;
+end;
 
 procedure TCalc.ButtonCloseClick(Sender: TObject);
 begin

@@ -1,0 +1,238 @@
+object Form2: TForm2
+  Left = 950
+  Height = 390
+  Top = 277
+  Width = 394
+  Caption = 'Ввод и редактирование данных'
+  ClientHeight = 390
+  ClientWidth = 394
+  LCLVersion = '1.4.2.0'
+  object P1: TPanel
+    Left = 8
+    Height = 320
+    Top = 8
+    Width = 376
+    ClientHeight = 320
+    ClientWidth = 376
+    TabOrder = 0
+    object SpinEdit1: TSpinEdit
+      Left = 216
+      Height = 23
+      Top = 122
+      Width = 50
+      MaxValue = 50
+      TabOrder = 0
+    end
+    object L1: TLabel
+      Left = 48
+      Height = 17
+      Top = 8
+      Width = 131
+      Caption = 'Порядковый номер'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object L2: TLabel
+      Left = 139
+      Height = 17
+      Top = 48
+      Width = 40
+      Caption = 'Автор'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object L3: TLabel
+      Left = 114
+      Height = 17
+      Top = 88
+      Width = 65
+      Caption = 'Название'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object L4: TLabel
+      Left = 46
+      Height = 17
+      Top = 128
+      Width = 133
+      Caption = 'Число экземпляров'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object L5: TLabel
+      Left = 95
+      Height = 17
+      Top = 168
+      Width = 84
+      Caption = 'Тип издания'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object L6: TLabel
+      Left = 24
+      Height = 17
+      Top = 208
+      Width = 155
+      Caption = 'Дата выдачи/возврата'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object L7: TLabel
+      Left = 95
+      Height = 17
+      Top = 248
+      Width = 84
+      Caption = 'Год издания'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object L8: TLabel
+      Left = 144
+      Height = 17
+      Top = 288
+      Width = 35
+      Caption = 'Цена'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object SpinEdit2: TSpinEdit
+      Left = 216
+      Height = 23
+      Top = 240
+      Width = 50
+      MaxValue = 2015
+      MinValue = 1990
+      TabOrder = 1
+      Value = 1990
+    end
+    object SpinEdit3: TSpinEdit
+      Left = 216
+      Height = 23
+      Top = 282
+      Width = 50
+      MaxValue = 500
+      TabOrder = 2
+    end
+    object ComboBox1: TComboBox
+      Left = 216
+      Height = 23
+      Top = 162
+      Width = 100
+      ItemHeight = 15
+      Items.Strings = (
+        'задачник'
+        'методическое пособие'
+        'поэзия'
+        'проза'
+        'роман'
+        'учебник'
+      )
+      TabOrder = 3
+    end
+    object DateTimePicker1: TDateTimePicker
+      Left = 216
+      Height = 23
+      Top = 202
+      Width = 79
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      TabOrder = 4
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      Date = 42388
+      Time = 0.848911261571629
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object E1: TEdit
+      Left = 216
+      Height = 23
+      Top = 42
+      Width = 80
+      TabOrder = 5
+    end
+    object E2: TEdit
+      Left = 216
+      Height = 23
+      Top = 82
+      Width = 80
+      TabOrder = 6
+    end
+  end
+  object P2: TPanel
+    Left = 8
+    Height = 50
+    Top = 336
+    Width = 376
+    ClientHeight = 50
+    ClientWidth = 376
+    TabOrder = 1
+    object BSave: TButton
+      Left = 64
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Сохранить'
+      ModalResult = 1
+      OnClick = BSaveClick
+      TabOrder = 0
+    end
+    object BCancel: TButton
+      Left = 232
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Отменить'
+      ModalResult = 2
+      OnClick = BCancelClick
+      TabOrder = 1
+    end
+  end
+end

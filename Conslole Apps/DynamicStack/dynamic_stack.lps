@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="dynamic_stack.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="53"/>
+        <CursorPos X="5" Y="70"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="8" HistoryIndex="7">
+      <Position1>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="13" Column="16"/>
+      </Position1>
+      <Position2>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="34" Column="18" TopLine="24"/>
+      </Position2>
+      <Position3>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="46" Column="12" TopLine="36"/>
+      </Position3>
+      <Position4>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="38" Column="17" TopLine="34"/>
+      </Position4>
+      <Position5>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="2" Column="6"/>
+      </Position5>
+      <Position6>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="11" Column="33"/>
+      </Position6>
+      <Position7>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="2" Column="11"/>
+      </Position7>
+      <Position8>
+        <Filename Value="dynamic_stack.pas"/>
+        <Caret Line="13" Column="7"/>
+      </Position8>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

@@ -1,7 +1,7 @@
 object Calc: TCalc
-  Left = 253
+  Left = 250
   Height = 277
-  Top = 220
+  Top = 249
   Width = 413
   Caption = 'Нахождение корней квадратного уравнения'
   ClientHeight = 277
@@ -141,7 +141,7 @@ object Calc: TCalc
     object ButtonClose: TButton
       Left = 152
       Height = 25
-      Top = 248
+      Top = 232
       Width = 123
       Caption = 'Закрыть программу'
       OnClick = ButtonCloseClick
@@ -151,8 +151,8 @@ object Calc: TCalc
       Left = 104
       Height = 26
       Top = 192
-      Width = 108
-      Caption = 'x1=                    '
+      Width = 18
+      Caption = 'X1'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -21
       Font.Name = 'Impact'
@@ -165,8 +165,8 @@ object Calc: TCalc
       Left = 216
       Height = 26
       Top = 192
-      Width = 127
-      Caption = 'x2=                        '
+      Width = 21
+      Caption = 'X2'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -21
       Font.Name = 'Impact'

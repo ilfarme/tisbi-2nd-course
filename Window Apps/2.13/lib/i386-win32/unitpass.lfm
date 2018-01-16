@@ -1,0 +1,50 @@
+object FPassword: TFPassword
+  Left = 932
+  Height = 126
+  Top = 342
+  Width = 279
+  BorderIcons = [biMinimize, biMaximize]
+  Caption = 'FPassword'
+  ClientHeight = 126
+  ClientWidth = 279
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  LCLVersion = '1.4.2.0'
+  object E1: TEdit
+    Left = 96
+    Height = 23
+    Top = 24
+    Width = 117
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 0
+  end
+  object L1: TLabel
+    Left = 25
+    Height = 21
+    Top = 24
+    Width = 53
+    Caption = 'Пароль'
+    Font.Height = -16
+    ParentColor = False
+    ParentFont = False
+  end
+  object BCheck: TButton
+    Left = 32
+    Height = 25
+    Top = 72
+    Width = 75
+    Caption = 'Проверить'
+    OnClick = BCheckClick
+    TabOrder = 1
+  end
+  object BCancel: TButton
+    Left = 152
+    Height = 25
+    Top = 72
+    Width = 75
+    Caption = 'Отменить'
+    OnClick = BCancelClick
+    TabOrder = 2
+  end
+end
