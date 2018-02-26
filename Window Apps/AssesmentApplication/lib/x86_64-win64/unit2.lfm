@@ -1,0 +1,83 @@
+object SelectTest: TSelectTest
+  Left = 768
+  Height = 225
+  Top = 198
+  Width = 320
+  Caption = 'Выбор дисциплины'
+  ClientHeight = 225
+  ClientWidth = 320
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.6'
+  object Label1: TLabel
+    Left = 8
+    Height = 23
+    Top = 16
+    Width = 121
+    Alignment = taCenter
+    Caption = 'Вы вошли как:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Blogger Sans Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label1Click
+  end
+  object Username: TLabel
+    Left = 136
+    Height = 1
+    Top = 16
+    Width = 1
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Blogger Sans Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    OnClick = UsernameClick
+  end
+  object Label2: TLabel
+    Left = 64
+    Height = 23
+    Top = 64
+    Width = 182
+    Caption = 'Выберите дисциплину'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Blogger Sans Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object MathBtn: TButton
+    Left = 22
+    Height = 57
+    Top = 103
+    Width = 123
+    Caption = 'Математика'
+    OnClick = MathBtnClick
+    TabOrder = 0
+  end
+  object InformaticsBtn: TButton
+    Left = 160
+    Height = 56
+    Top = 103
+    Width = 123
+    Caption = 'Информатика'
+    OnClick = InformaticsBtnClick
+    TabOrder = 1
+  end
+  object CancelBtn: TButton
+    Left = 112
+    Height = 25
+    Top = 176
+    Width = 75
+    Caption = 'Отмена'
+    OnClick = CancelBtnClick
+    TabOrder = 2
+  end
+end

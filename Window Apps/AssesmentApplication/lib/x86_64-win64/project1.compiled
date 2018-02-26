@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\Lazarus\fpc\3.0.4\bin\x86_64-win64\fpc.exe" Date="1266910071"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -FiC:\Users\seven13\Desktop\AssesmentApplication\lib\x86_64-win64 -FuC:\Lazarus\lcl\units\x86_64-win64\win32 -FuC:\Lazarus\lcl\units\x86_64-win64 -FuC:\Lazarus\components\lazutils\lib\x86_64-win64 -FuC:\Lazarus\packager\units\x86_64-win64 -FuC:\Users\seven13\Desktop\AssesmentApplication\ -FUC:\Users\seven13\Desktop\AssesmentApplication\lib\x86_64-win64\ -dLCL -dLCLwin32 project1.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018 02 13 14:17:36.331,=C:\Users\seven13\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018 02 13 14:21:00.360,C:\Users\seven13\Desktop\YandexExplorer\Unit1.dfm=C:\Users\seven13\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018 02 13 14:21:00.360,C:\Users\seven13\Desktop\YandexExplorer\Unit1.pas=C:\Users\seven13\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018 02 13 14:39:17.612,=C:\Users\seven13\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2018 02 13 14:40:41.859,C:\Users\seven13\Desktop\YandexExplorer\Unit2.pas=C:\Users\seven13\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2018 02 13 14:40:41.859,C:\Users\seven13\Desktop\YandexExplorer\Unit2.dfm=C:\Users\seven13\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2018 02 13 16:12:16.083,C:\Users\seven13\Desktop\YandexExplorer\Project1.dproj=C:\Users\seven13\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

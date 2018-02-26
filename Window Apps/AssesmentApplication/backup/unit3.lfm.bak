@@ -1,0 +1,85 @@
+object Test: TTest
+  Left = 826
+  Height = 286
+  Top = 263
+  Width = 467
+  Caption = 'Test'
+  ClientHeight = 286
+  ClientWidth = 467
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object ConfirmBtn: TButton
+    Left = 376
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'Ответить'
+    OnClick = ConfirmBtnClick
+    TabOrder = 0
+  end
+  object Question: TLabel
+    Left = 16
+    Height = 23
+    Top = 16
+    Width = 83
+    Caption = 'Вопрос №'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Name = 'Blogger Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object QuestionText: TLabel
+    Left = 16
+    Height = 23
+    Top = 56
+    Width = 107
+    Caption = 'Текст Вопроса'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -19
+    Font.Name = 'Blogger Sans Light'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Answer: TEdit
+    Left = 136
+    Height = 23
+    Top = 248
+    Width = 232
+    TabOrder = 1
+  end
+  object EnterAnswer: TLabel
+    Left = 16
+    Height = 23
+    Top = 248
+    Width = 114
+    Caption = 'Введите ответ:'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -19
+    Font.Name = 'Blogger Sans Light'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object QuestionCounter: TLabel
+    Left = 104
+    Height = 23
+    Top = 16
+    Width = 10
+    Caption = '0'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -19
+    Font.Name = 'Blogger Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end

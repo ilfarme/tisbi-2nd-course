@@ -1,0 +1,8 @@
+object MathTest: TMathTest
+  Left = 302
+  Height = 240
+  Top = 130
+  Width = 320
+  Caption = 'MathTest'
+  LCLVersion = '1.6.4.0'
+end

@@ -1,0 +1,107 @@
+unit Unit3;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Menus, Unit5;
+
+type
+
+  { TTest }
+
+  TTest = class(TForm)
+    ConfirmBtn: TButton;
+    Answer: TEdit;
+    EnterAnswer: TLabel;
+    QuestionCounter: TLabel;
+    QuestionText: TLabel;
+    Question: TLabel;
+    procedure ConfirmBtnClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+  const n = 5; //количество вопросов
+        INFO_QUESTIONS_TXT = 'InfoQuestionsDatabase.txt';
+        INFO_ANSWERS_TXT = 'InfoAnswersDatabase.txt';
+
+        MATH_QUESTIONS_TXT = 'MathQuestionsDatabase.txt';
+        MATH_ANSWERS_TXT = 'MathAnswersDatabase.txt';
+
+        RESULTS_TXT = 'TestResults.txt';
+
+var
+  Test: TTest;
+  InformaticsDatabase:array[1..n] of string;
+  QuestionNum,TrueAnswers,FalseAnswers:byte;
+  ThisQuestion, ThisAnswer:string;
+  Questions,Answers:text;
+  isMath,isInfo:boolean;
+implementation
+ uses Unit2;
+{$R *.lfm}
+
+{ TTest }
+
+procedure TTest.FormCreate(Sender: TObject);
+const RESULTS_HEADER = 'Результаты теста по';
+      MATH = 'Математике';
+      INFO = 'Информатике';
+var
+  TestResults:text;
+begin
+  AssignFile(TestResults, RESULTS_TXT);
+  Rewrite(TestResults);
+  If isMath = True then begin
+  //AssignFile(Questions, INFO_QUESTIONS_TXT);
+  //AssignFile(Answers, INFO_ANSWERS_TXT);
+  //WriteLn(TestResults, RESULTS_HEADER);
+  //WriteLn(TestResults, MATH);
+  end;
+  If isInfo = True then begin
+  ShowMessage('Тест по информатике');
+  //AssignFile(Questions, MATH_QUESTIONS_TXT);
+  //AssignFile(Answers, MATH_ANSWERS_TXT);
+  //WriteLn(TestResults, RESULTS_HEADER);
+  //WriteLn(TestResults, INFO);
+  end;
+  //Reset(Questions);
+  //Reset(Answers);
+  //QuestionNum:=1;
+  //QuestionCounter.Caption:=IntToStr(QuestionNum);
+  //TrueAnswers:=0;
+  //FalseAnswers:=0;
+  //ReadLn(Questions, ThisQuestion);
+  //QuestionText.Caption:=ThisQuestion;
+  //ReadLn(Answers, ThisAnswer);//нужно чтобы правильно работала проверка первого вопроса
+end;
+
+procedure TTest.ConfirmBtnClick(Sender: TObject);
+begin
+  //проверка ответа на вопрос
+  ReadLn(Answers, ThisAnswer);
+  //ShowMessage(ThisAnswer); откомментировать для отладки
+  //ShowMessage(Answer.Text);
+  If ThisAnswer = Answer.Text then begin Inc(TrueAnswers);
+  ShowMessage('Верно!');
+  end
+  else begin Inc(FalseAnswers);
+      Inc(FalseAnswers);
+    ShowMessage('Неверно!')
+  end;
+  //смена вопроса
+  Inc(QuestionNum);
+  QuestionCounter.Caption:=IntToStr(QuestionNum);
+  ReadLn(Questions, ThisQuestion);
+  QuestionText.Caption:=ThisQuestion;
+  If EOF then Results.ShowModal;
+end;
+
+end.
+
