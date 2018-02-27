@@ -76,10 +76,7 @@ var
     if (pTemp <> nil) then
       with pTemp^ do
       begin
-        Print(pTemp^.left, tabs + 6);
-        for i := 0 to tabs do
-          Write(' ');
-        WriteLn('    /');
+        Print(pTemp^.left, tabs + 4);
         for i := 0 to tabs do
           Write(' ');
         WriteLn('   /');
@@ -89,15 +86,12 @@ var
         for i := 0 to tabs do
           Write(' ');
         WriteLn('   \');
-        for i := 0 to tabs do
-          Write(' ');
-        WriteLn('    \');
-        Print(pTemp^.right, tabs + 6);
+        Print(pTemp^.right, tabs + 4);
       end;
   end;
 
   procedure Pop(sKey: integer);
-  var pRTemp:pSTreeNode;
+  var pRTemp, pLTemp:pSTreeNode;
   begin
     if (Search(sKey) <> nil) then
     begin
@@ -136,21 +130,46 @@ var
         WriteLn;
         WriteLn('У вершины есть два потомка: удаляю методом замены.');
         WriteLn('Родителем является: ', pParent^.key);
-        pRTemp:=pTemp^.left;
-        while (pRTemp <> nil) do
-        begin
-          if (pRTemp^.right = nil) then break;
-          pParent:=pRTemp;
-          Pop(pRTemp^.key);
+
+        //ищем самую левую вершину
+        //заходим в левое поддерево и спускаемся как можно ниже по правой стороне
+        pLTemp:=pTemp^.left;
+        while (pLTemp^.right <> nil) do begin
+        if (pLTemp^.right = nil) then break
+        else pLTemp:=pLTemp^.right;
         end;
+        WriteLn('Самая правая вершина в левом поддереве: ', pLTemp^.key);
+
+        //ищем самую правую вершину
+        //заходим в правое поддерево и спускаемся как можно ниже по левой стороне
+        pRTemp:=pTemp^.right;
+        while (pRTemp^.left <> nil) do begin
+        if (pRTemp^.left = nil) then break
+        else pRTemp:=pRTemp^.right;
+        end;
+        WriteLn('Самая левая вершина в правом поддереве: ', pRTemp^.key);
+
+        //выбор вершины для замены
+        Write('Какую вершину желаете выбрать в качестве замены? (Л/П): ');
+        ReadLn(LR);
+        if (LR = pRTemp^.key) then
+        begin
+          //magic
+        end
+        else if (LR = pLTemp^.key) then
+        begin
+          //magic
+        end
+        else //try again
+
       end;
     end
     else
     begin
       WriteLn;
       WriteLn('404: Вершина не найдена.');
-      WriteLn;
     end;
+    WriteLn;
   end;
 
 begin
