@@ -7,6 +7,7 @@ type
     key, kol: integer;
     left: pSTreeNode;
     right: pSTreeNode;
+    copy: pSTReeNode;
     //добавить ещё одно поле для добавления неуникальных узлов
     //чтобы не сломалась структура
   end;
@@ -73,6 +74,7 @@ var
   var
     i: integer;
   begin
+    pTemp:=pRoot;
     if (pTemp <> nil) then
       with pTemp^ do
       begin
@@ -92,6 +94,7 @@ var
 
   procedure Pop(sKey: integer);
   var pRTemp, pLTemp:pSTreeNode;
+    LR:integer;
   begin
     if (Search(sKey) <> nil) then
     begin

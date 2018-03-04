@@ -73,6 +73,7 @@ var
   var
     i: integer;
   begin
+    pTemp:=pRoot;
     if (pTemp <> nil) then
       with pTemp^ do
       begin
@@ -92,6 +93,7 @@ var
 
   procedure Pop(sKey: integer);
   var pRTemp, pLTemp:pSTreeNode;
+    LR:integer;
   begin
     if (Search(sKey) <> nil) then
     begin
@@ -160,7 +162,7 @@ var
         begin
           //magic
         end
-        else
+        else //try again
 
       end;
     end
