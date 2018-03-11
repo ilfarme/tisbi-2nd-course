@@ -30,7 +30,7 @@ Procedure TStudent.SetFam(NewFam:string);
 begin
   Form1.StringGrid1.Cells[0,0]:=NewFam;
   Form1.StringGrid1.Cells[1,0]:='Оценки';
-  Form1.Button3.Visible:=true;
+  Form1.addMark.Visible:=true;
 end;
 
 Procedure TStudent.AddOcenky (NewOcenka:integer);
@@ -39,7 +39,7 @@ begin
   Form1.StringGrid1.Row:=Form1.StringGrid1.RowCount;
   Form1.StringGrid1.Cells[1,Form1.StringGrid1.Row]:=inttostr(NewOcenka);
   Form1.StringGrid1.Cells[0,Form1.StringGrid1.Row]:=Form1.ComboBox1.Items[Form1.ComboBox1.ItemIndex];
-  Form1.Button4.Visible:=true;
+  Form1.averageBall.Visible:=true;
 end;
 
 function TStudent.SredBall:real;

@@ -13,32 +13,27 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    Button5: TButton;
+    CreateStud: TButton;
+    enterLastName: TButton;
+    addMark: TButton;
+    averageBall: TButton;
+    CloseProg: TButton;
     ComboBox1: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
-    PairSplitter1: TPairSplitter;
-    PairSplitter2: TPairSplitter;
-    PairSplitter3: TPairSplitter;
-    PairSplitterSide1: TPairSplitterSide;
-    PairSplitterSide2: TPairSplitterSide;
-    PairSplitterSide3: TPairSplitterSide;
-    PairSplitterSide4: TPairSplitterSide;
-    PairSplitterSide5: TPairSplitterSide;
-    PairSplitterSide6: TPairSplitterSide;
     SpinEdit1: TSpinEdit;
     StringGrid1: TStringGrid;
     ToolBar1: TToolBar;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
-    procedure Button5Click(Sender: TObject);
+    procedure CreateStudClick(Sender: TObject);
+    procedure enterLastNameClick(Sender: TObject);
+    procedure addMarkClick(Sender: TObject);
+    procedure averageBallClick(Sender: TObject);
+    procedure CloseProgClick(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure PairSplitterSide2MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure SpinEdit1Change(Sender: TObject);
 
   private
     { private declarations }
@@ -62,32 +57,48 @@ begin
   MyStud.Create;
 end;
 
-Procedure TForm1.Button5Click(Sender: TObject);
+procedure TForm1.PairSplitterSide2MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+
+end;
+
+procedure TForm1.SpinEdit1Change(Sender: TObject);
+begin
+
+end;
+
+Procedure TForm1.CloseProgClick(Sender: TObject);
 begin
   Close;
 end;
 
-Procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.ComboBox1Change(Sender: TObject);
+begin
+
+end;
+
+Procedure TForm1.CreateStudClick(Sender: TObject);
 begin
   StringGrid1.Cells[0,0]:='';
   for j:=1 to StringGrid1.RowCount-1 do
     StringGrid1.Rows[j].clear;
   StringGrid1.RowCount:=1;
-  Button3.Visible:=false;
-  Button4.Visible:=false;
+  addMark.Visible:=false;
+  averageBall.Visible:=false;
 end;
 
-Procedure TForm1.Button2Click(Sender: TObject);
+Procedure TForm1.enterLastNameClick(Sender: TObject);
 begin
   MyStud.SetFam(Edit1.text);
 end;
 
-Procedure TForm1.Button3Click(Sender: TObject);
+Procedure TForm1.addMarkClick(Sender: TObject);
 begin
   MyStud.AddOcenky (SpinEdit1.Value);
 end;
 
-Procedure TForm1.Button4Click(Sender: TObject);
+Procedure TForm1.averageBallClick(Sender: TObject);
 begin
   MyStud.SredBall;
 end;
