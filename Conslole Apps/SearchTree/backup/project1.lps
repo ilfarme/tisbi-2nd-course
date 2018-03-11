@@ -8,13 +8,13 @@
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="73"/>
-        <CursorPos X="36" Y="83"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="154"/>
+        <CursorPos X="19" Y="164"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="16" HistoryIndex="15">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="project1.lpr"/>
         <Caret Line="17" Column="12" TopLine="4"/>
@@ -79,6 +79,54 @@
         <Filename Value="project1.lpr"/>
         <Caret Line="14" Column="30"/>
       </Position16>
+      <Position17>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="85" Column="52" TopLine="71"/>
+      </Position17>
+      <Position18>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="89" Column="3" TopLine="76"/>
+      </Position18>
+      <Position19>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="90" Column="12" TopLine="75"/>
+      </Position19>
+      <Position20>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="87" Column="59" TopLine="72"/>
+      </Position20>
+      <Position21>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="88" Column="6" TopLine="77"/>
+      </Position21>
+      <Position22>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="81" Column="55" TopLine="69"/>
+      </Position22>
+      <Position23>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="32" Column="32" TopLine="12"/>
+      </Position23>
+      <Position24>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="10" Column="60"/>
+      </Position24>
+      <Position25>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="41" Column="11" TopLine="25"/>
+      </Position25>
+      <Position26>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="24" Column="8" TopLine="13"/>
+      </Position26>
+      <Position27>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="43" Column="107" TopLine="31"/>
+      </Position27>
+      <Position28>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="164" Column="22" TopLine="150"/>
+      </Position28>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

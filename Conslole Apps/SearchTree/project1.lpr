@@ -93,8 +93,13 @@ var
   end;
 
   procedure Pop(sKey: integer);
+<<<<<<< HEAD
   var pRTemp, pLTemp:pSTreeNode;
     LR:integer;
+=======
+  var pRTemp, pLTemp, pCurrent:pSTreeNode;
+    LR,nKey:integer;
+>>>>>>> test
   begin
     if (Search(sKey) <> nil) then
     begin
@@ -132,6 +137,8 @@ var
       begin //если у вершины есть оба потомка
         WriteLn;
         WriteLn('У вершины есть два потомка: удаляю методом замены.');
+        WriteLn('Левое поддерево: ',pTemp^.left);
+        WriteLn('Правое поддерево: ',pTemp^.right);
         WriteLn('Родителем является: ', pParent^.key);
 
         //ищем самую левую вершину
@@ -157,11 +164,30 @@ var
         ReadLn(LR);
         if (LR = pRTemp^.key) then
         begin
-          //magic
-        end
-        else if (LR = pLTemp^.key) then
+
+          WriteLn('Удаляемая вершина - ',pTemp^.key);
+          pCurrent:=pTemp;
+
+          WriteLn('Выбрана вершина-заменитель - ',pRTemp^.key);
+          nKey:=pRTemp^.key;
+          pCurrent^.key:=nKey;
+          WriteLn('Новый ключ применён.');
+          WriteLn('Удаляю вершину-заменитель...');
+          Pop(pRTemp^.key);
+
+        end;
+        if (LR = pLTemp^.key) then
         begin
-          //magic
+
+          WriteLn('Удаляемая вершина - ',pTemp^.key);
+          pCurrent:=pTemp;
+
+          WriteLn('Выбрана вершина-заменитель - ',pLTemp^.key);
+          nKey:=pLTemp^.key;
+          pCurrent^.key:=nKey;
+          WriteLn('Новый ключ применён.');
+          WriteLn('Удаляю вершину-заменитель...');
+          Pop(pLTemp^.key);
         end
         else //try again
 
