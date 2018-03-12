@@ -18,25 +18,30 @@ var
 
   function Search(akey: integer): pSTreeNode;
   begin
-    pTemp := pRoot;
-    Result := nil;
-    while (pTemp <> nil) do
+    if (pRoot = nil) then
+      WriteLn('Поиск не возможен, дерево пустое.')
+    else
     begin
-      if (akey = pTemp^.key) then
+      pTemp := pRoot;
+      Result := nil;
+      while (pTemp <> nil) do
       begin
-        WriteLn('Элемент найден: ', pTemp^.key);
-        Result := pTemp;
-        break;
-      end
-      else if (akey < pTemp^.key) then
-      begin
-        pParent := pTemp;
-        pTemp := pTemp^.left;
-      end
-      else
-      begin
-        pParent := pTemp;
-        pTemp := pTemp^.right;
+        if (akey = pTemp^.key) then
+        begin
+          WriteLn('Элемент найден: ', pTemp^.key);
+          Result := pTemp;
+          break;
+        end
+        else if (akey < pTemp^.key) then
+        begin
+          pParent := pTemp;
+          pTemp := pTemp^.left;
+        end
+        else
+        begin
+          pParent := pTemp;
+          pTemp := pTemp^.right;
+        end;
       end;
     end;
   end;
@@ -73,7 +78,6 @@ var
   var
     i: integer;
   begin
-    pTemp:=pRoot;
     if (pTemp <> nil) then
       with pTemp^ do
       begin
@@ -92,13 +96,9 @@ var
   end;
 
   procedure Pop(sKey: integer);
-<<<<<<< HEAD
-  var pRTemp, pLTemp:pSTreeNode;
-    LR:integer;
-=======
-  var pRTemp, pLTemp, pCurrent:pSTreeNode;
-    LR,nKey:integer;
->>>>>>> test
+  var
+    pRTemp, pLTemp: pSTreeNode;
+    LR, nKey, dKey: integer;
   begin
     if (Search(sKey) <> nil) then
     begin
@@ -122,39 +122,48 @@ var
         if (pTemp^.left = nil) then
         begin
           pParent^.right := pTemp^.right;
-          pTemp^.right := nil;
         end;
         if (pTemp^.right = nil) then
         begin
           pParent^.left := pTemp^.left;
-          pTemp^.left := nil;
         end;
         WriteLn('Успешно удалено.');
         WriteLn;
       end
       else if (pParent^.left <> nil) and (pParent^.right <> nil) then
+
       begin //если у вершины есть оба потомка
         WriteLn;
         WriteLn('У вершины есть два потомка: удаляю методом замены.');
-        WriteLn('Левое поддерево: ',pTemp^.left);
-        WriteLn('Левое поддерево: ',pTemp^.right);
+        WriteLn('Левое поддерево: ', pTemp^.left^.key);
+        WriteLn('Правое поддерево: ', pTemp^.right^.key);
         WriteLn('Родителем является: ', pParent^.key);
 
         //ищем самую левую вершину
         //заходим в левое поддерево и спускаемся как можно ниже по правой стороне
-        pLTemp:=pTemp^.left;
-        while (pLTemp^.right <> nil) do begin
-        if (pLTemp^.right = nil) then break
-        else pLTemp:=pLTemp^.right;
+        pLTemp := pTemp^.left;
+        if pLTemp^.right <> nil then
+        while (pLTemp^.right <> nil) do
+        begin
+          if (pLTemp^.right = nil) then
+            break
+          else
+            pLTemp := pLTemp^.right;
         end;
         WriteLn('Самая правая вершина в левом поддереве: ', pLTemp^.key);
 
         //ищем самую правую вершину
         //заходим в правое поддерево и спускаемся как можно ниже по левой стороне
-        pRTemp:=pTemp^.right;
-        while (pRTemp^.left <> nil) do begin
-        if (pRTemp^.left = nil) then break
-        else pRTemp:=pRTemp^.right;
+        pRTemp := pTemp^.right;
+        WriteLn(pRTemp^.key);
+        WriteLn(pRTemp^.left^.key);//для отладки, потом удалить.
+        if pRTemp^.left <> nil then
+        while (pRTemp^.left <> nil) do
+        begin
+          if (pRTemp^.left = nil) then
+            break
+          else
+            pRTemp := pRTemp^.right;
         end;
         WriteLn('Самая левая вершина в правом поддереве: ', pRTemp^.key);
 
@@ -163,33 +172,36 @@ var
         ReadLn(LR);
         if (LR = pRTemp^.key) then
         begin
-
-          WriteLn('Удаляемая вершина - ',pTemp^.key);
-          pCurrent:=pTemp;
-
-          WriteLn('Выбрана вершина-заменитель - ',pRTemp^.key);
-          nKey:=pRTemp^.key;
-          pCurrent^.key:=nKey;
-          WriteLn('Новый ключ применён.');
-          WriteLn('Удаляю вершину-заменитель...');
-          Pop(pRTemp^.key);
-
+          WriteLn('Удаляемая вершина - ', pTemp^.key);
+          dKey := pTemp^.key;
+          //запоминаем ключ удаляемой вершины
+          WriteLn('Выбрана вершина-заменитель - ', pRTemp^.key);
+          nKey := pRTemp^.key;
+          //запоминаем ключ вершины-заменителя
+          WriteLn('Cохранил ключ: ', nKey);
+          Pop(pRTemp^.key);  //удаляем вершину-заменитель
+          pTemp := Search(dKey);
+          if pTemp <> nil then
+            pTemp^.key := nKey
+          else
+            WriteLn('Непредвиденная ошибка, удаляемый элемент потерян.');
         end;
         if (LR = pLTemp^.key) then
         begin
-
-          WriteLn('Удаляемая вершина - ',pTemp^.key);
-          pCurrent:=pTemp;
-
-          WriteLn('Выбрана вершина-заменитель - ',pLTemp^.key);
-          nKey:=pLTemp^.key;
-          pCurrent^.key:=nKey;
-          WriteLn('Новый ключ применён.');
-          WriteLn('Удаляю вершину-заменитель...');
-          Pop(pLTemp^.key);
-        end
-        else //try again
-
+          WriteLn('Удаляемая вершина - ', pTemp^.key);
+          dKey := pTemp^.key;
+          //запоминаем ключ удаляемой вершины
+          WriteLn('Выбрана вершина-заменитель - ', pLTemp^.key);
+          nKey := pLTemp^.key;
+          //запоминаем ключ вершины-заменителя
+          WriteLn('Cохранил ключ: ', nKey);
+          Pop(pLTemp^.key);  //удаляем вершину-заменитель
+          pTemp := Search(dKey);
+          if pTemp <> nil then
+            pTemp^.key := nKey
+          else
+            WriteLn('Непредвиденная ошибка, удаляемый элемент потерян.');
+        end;
       end;
     end
     else
@@ -199,6 +211,7 @@ var
     end;
     WriteLn;
   end;
+
 
 begin
   repeat
@@ -216,7 +229,11 @@ begin
         Write('Введите значение ключа для поиска: ');
         ReadLn(sKey);
         pResult := Search(sKey);
-        WriteLn(pResult^.key);
+        if (pResult = nil) then
+        begin
+          WriteLn('Ошибка 404: Узел не найден.');
+          WriteLn;
+        end;
       end;
       2:
       begin
