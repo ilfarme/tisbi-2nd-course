@@ -155,8 +155,7 @@ var
         //ищем самую правую вершину
         //заходим в правое поддерево и спускаемся как можно ниже по левой стороне
         pRTemp := pTemp^.right;
-        WriteLn(pRTemp^.key);
-        WriteLn(pRTemp^.left^.key);//для отладки, потом удалить.
+        //WriteLn(pRTemp^.left^.key);//для отладки, потом удалить.
         if pRTemp^.left <> nil then
         while (pRTemp^.left <> nil) do
         begin

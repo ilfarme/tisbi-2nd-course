@@ -82,7 +82,7 @@ Procedure TForm1.CreateStudClick(Sender: TObject);
 begin
   StringGrid1.Cells[0,0]:='';
   for j:=1 to StringGrid1.RowCount-1 do
-    StringGrid1.Rows[j].clear;
+  StringGrid1.Rows[j].clear;
   StringGrid1.RowCount:=1;
   addMark.Visible:=false;
   averageBall.Visible:=false;

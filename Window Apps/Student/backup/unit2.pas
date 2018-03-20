@@ -34,12 +34,14 @@ begin
 end;
 
 Procedure TStudent.AddOcenky (NewOcenka:integer);
+var q:integer;
 begin
+  q:=
   Form1.StringGrid1.RowCount:=Form1.StringGrid1.RowCount+1;
   Form1.StringGrid1.Row:=Form1.StringGrid1.RowCount;
   Form1.StringGrid1.Cells[1,Form1.StringGrid1.Row]:=inttostr(NewOcenka);
   Form1.StringGrid1.Cells[0,Form1.StringGrid1.Row]:=Form1.ComboBox1.Items[Form1.ComboBox1.ItemIndex];
-  Form1.Button4.Visible:=true;
+  Form1.averageBall.Visible:=true;
 end;
 
 function TStudent.SredBall:real;

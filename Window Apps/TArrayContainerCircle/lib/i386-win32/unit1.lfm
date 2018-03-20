@@ -1,0 +1,80 @@
+object Form1: TForm1
+  Left = 561
+  Height = 472
+  Top = 144
+  Width = 761
+  HorzScrollBar.Page = 90
+  HorzScrollBar.Range = 90
+  VertScrollBar.Page = 90
+  VertScrollBar.Range = 90
+  Caption = 'Создание фигур'
+  ClientHeight = 452
+  ClientWidth = 761
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object Image1: TImage
+    Left = 0
+    Height = 452
+    Top = 0
+    Width = 761
+    Align = alClient
+    Center = True
+  end
+  object MainMenu1: TMainMenu
+    left = 8
+    top = 8
+    object MCreat: TMenuItem
+      Caption = 'Создать'
+      object MCircl: TMenuItem
+        Caption = 'Окружность'
+        OnClick = MCirclClick
+      end
+      object MPryam: TMenuItem
+        Caption = 'Прямоугольник'
+        OnClick = MPryamClick
+      end
+    end
+    object MMove: TMenuItem
+      Caption = 'Переместить'
+      object MMoveCircl: TMenuItem
+        Caption = 'Окружность'
+        OnClick = MMoveCirclClick
+      end
+      object MMovePryam: TMenuItem
+        Caption = 'Прямоугольник'
+        OnClick = MMovePryamClick
+      end
+    end
+    object MCreatArray: TMenuItem
+      Caption = 'Создать массив'
+      object MCreatCircl: TMenuItem
+        Caption = 'Окружности'
+        OnClick = MCreatCirclClick
+      end
+      object MCreatPryam: TMenuItem
+        Caption = 'Прямоугольника'
+        OnClick = MCreatPryamClick
+      end
+    end
+    object MMoveArray: TMenuItem
+      Caption = 'Переместить массив'
+      object MMoveArrCircl: TMenuItem
+        Caption = 'Окружности'
+        OnClick = MMoveArrCirclClick
+      end
+      object MMoveArrPryam: TMenuItem
+        Caption = 'Прямоугольника'
+        OnClick = MMoveArrPryamClick
+      end
+    end
+    object MClean: TMenuItem
+      Caption = 'Очистить'
+      OnClick = MCleanClick
+    end
+    object MClose: TMenuItem
+      Caption = 'Выход'
+      OnClick = MCloseClick
+    end
+  end
+end

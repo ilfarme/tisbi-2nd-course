@@ -1,0 +1,45 @@
+object Form1: TForm1
+  Left = 233
+  Height = 472
+  Top = 116
+  Width = 761
+  HorzScrollBar.Page = 90
+  HorzScrollBar.Range = 90
+  VertScrollBar.Page = 90
+  VertScrollBar.Range = 90
+  Caption = 'Композиция'
+  ClientHeight = 0
+  ClientWidth = 0
+  Color = clWhite
+  Font.Color = clBlack
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.8.2.0'
+  Visible = True
+  object Image1: TImage
+    Left = 0
+    Height = 452
+    Top = 0
+    Width = 761
+    Align = alClient
+  end
+  object MainMenu1: TMainMenu
+    left = 704
+    top = 400
+    object MenuItem1: TMenuItem
+      Caption = 'Создать'
+      object MenuItem2: TMenuItem
+        Caption = 'Деталь'
+        OnClick = MenuItem2Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Переместить деталь'
+        OnClick = MenuItem3Click
+      end
+    end
+    object MClean: TMenuItem
+      Caption = 'Очистить'
+      OnClick = MCleanClick
+    end
+  end
+end

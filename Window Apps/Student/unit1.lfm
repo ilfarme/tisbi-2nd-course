@@ -1,10 +1,10 @@
 object Form1: TForm1
-  Left = 676
-  Height = 572
-  Top = 112
+  Left = 798
+  Height = 576
+  Top = 113
   Width = 547
   Caption = 'Студент'
-  ClientHeight = 572
+  ClientHeight = 576
   ClientWidth = 547
   OnCreate = FormCreate
   LCLVersion = '1.8.2.0'
@@ -95,7 +95,7 @@ object Form1: TForm1
     Height = 25
     Top = 536
     Width = 75
-    Caption = 'Создать'
+    Caption = 'Очистить'
     OnClick = CreateStudClick
     TabOrder = 2
   end

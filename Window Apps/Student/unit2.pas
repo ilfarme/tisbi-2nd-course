@@ -34,7 +34,9 @@ begin
 end;
 
 Procedure TStudent.AddOcenky (NewOcenka:integer);
+var q:integer;
 begin
+
   Form1.StringGrid1.RowCount:=Form1.StringGrid1.RowCount+1;
   Form1.StringGrid1.Row:=Form1.StringGrid1.RowCount;
   Form1.StringGrid1.Cells[1,Form1.StringGrid1.Row]:=inttostr(NewOcenka);
