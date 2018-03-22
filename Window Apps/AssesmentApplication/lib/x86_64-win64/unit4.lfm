@@ -1,8 +1,0 @@
-object UserResults: TUserResults
-  Left = 408
-  Height = 526
-  Top = 118
-  Width = 465
-  Caption = 'UserResults'
-  LCLVersion = '1.8.0.6'
-end

@@ -74,14 +74,53 @@ var
     end;
   end;
 
-  procedure Print(pTemp: pSTreeNode; tabs: integer);
+  procedure Print;
+  var printType:byte;
+  begin
+      WriteLn('1. Прямой обход');
+      WriteLn('2. Симметричный обход');
+      WriteLn('3. Обратный обход');
+      WriteLn('Введите значение: ');
+      ReadLn(printType);
+    case printType of
+      1: PreOrder(pRoot, 0);
+      2: StandartOrder(pRoot, 0);
+      3: PostOrder(pRoot, 0);
+    end;
+  end;
+
+  procedure PreOrder(pTemp:pTReeNode; tabs:integer);
+  var i:integer;
+  begin
+    if pTemp <> nil then
+    begin
+      for i:=0 to tabs do Write(' ');
+      WriteLn(' ',pTemp^.key, ' (',pTemp^.kol,') ');
+      PreOrder(pTemp^.left, tabs + 4);
+      PreOrder(pTemp^.right, tabs + 4);
+    end;
+  end;
+
+  procedure PostOrder(pTemp:pTReeNode; tabs:integer);
+  var i:integer;
+  begin
+    if pTemp <> nil then
+    begin
+      PostOrder(pTemp^.left, tabs + 4);
+      PostOrder(pTemp^.right, tabs + 4);
+      for i:=0 to tabs do Write(' ');
+      WriteLn(' ',pTemp^.key, ' (',pTemp^.kol,') ');
+    end;
+  end;
+
+  procedure StandartOrder(pTemp: pSTreeNode; tabs: integer);
   var
     i: integer;
   begin
     if (pTemp <> nil) then
       with pTemp^ do
       begin
-        Print(pTemp^.left, tabs + 4);
+        StandartOrder(pTemp^.left, tabs + 4);
         for i := 0 to tabs do
           Write(' ');
         WriteLn('   /');
@@ -91,7 +130,7 @@ var
         for i := 0 to tabs do
           Write(' ');
         WriteLn('   \');
-        Print(pTemp^.right, tabs + 4);
+        StandartOrder(pTemp^.right, tabs + 4);
       end;
   end;
 
@@ -210,6 +249,8 @@ var
     end;
     WriteLn;
   end;
+
+
 
 
 begin
