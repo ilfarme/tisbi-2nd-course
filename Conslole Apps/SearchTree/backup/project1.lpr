@@ -125,7 +125,7 @@ end;
       WriteLn('1. Прямой обход');
       WriteLn('2. Симметричный обход');
       WriteLn('3. Обратный обход');
-      WriteLn('Введите значение: ');
+      Write('Введите значение: ');
       ReadLn(printType);
     case printType of
       1: PreOrder(pRoot, 0);
