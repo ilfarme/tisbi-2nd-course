@@ -74,6 +74,51 @@ var
     end;
   end;
 
+procedure PreOrder(pTemp:pSTReeNode; tabs:integer);
+var i:integer;
+begin
+  if pTemp <> nil then
+  begin
+    for i:=0 to tabs do Write(' ');
+    WriteLn(' ',pTemp^.key, ' (',pTemp^.kol,') ');
+    PreOrder(pTemp^.left, tabs + 4);
+    PreOrder(pTemp^.right, tabs + 4);
+  end;
+end;
+
+procedure PostOrder(pTemp:pSTReeNode; tabs:integer);
+var i:integer;
+begin
+  if pTemp <> nil then
+  begin
+    PostOrder(pTemp^.left, tabs + 4);
+    PostOrder(pTemp^.right, tabs + 4);
+    for i:=0 to tabs do Write(' ');
+    WriteLn(' ',pTemp^.key, ' (',pTemp^.kol,') ');
+  end;
+end;
+
+procedure StandartOrder(pTemp: pSTreeNode; tabs: integer);
+var
+  i: integer;
+begin
+  if (pTemp <> nil) then
+    with pTemp^ do
+    begin
+      StandartOrder(pTemp^.left, tabs + 4);
+      for i := 0 to tabs do
+        Write(' ');
+      WriteLn('   /');
+      for i := 0 to tabs do
+        Write(' ');
+      WriteLn('  ', pTemp^.key, ' (', pTemp^.kol, ')');
+      for i := 0 to tabs do
+        Write(' ');
+      WriteLn('   \');
+      StandartOrder(pTemp^.right, tabs + 4);
+    end;
+end;
+
   procedure Print;
   var printType:byte;
   begin
@@ -87,51 +132,6 @@ var
       2: StandartOrder(pRoot, 0);
       3: PostOrder(pRoot, 0);
     end;
-  end;
-
-  procedure PreOrder(pTemp:pTReeNode; tabs:integer);
-  var i:integer;
-  begin
-    if pTemp <> nil then
-    begin
-      for i:=0 to tabs do Write(' ');
-      WriteLn(' ',pTemp^.key, ' (',pTemp^.kol,') ');
-      PreOrder(pTemp^.left, tabs + 4);
-      PreOrder(pTemp^.right, tabs + 4);
-    end;
-  end;
-
-  procedure PostOrder(pTemp:pTReeNode; tabs:integer);
-  var i:integer;
-  begin
-    if pTemp <> nil then
-    begin
-      for i:=0 to tabs do Write(' ');
-      WriteLn(' ',pTemp^.key, ' (',pTemp^.kol,') ');
-      PostOrder(pTemp^.left, tabs + 4);
-      PostOrder(pTemp^.right, tabs + 4);
-    end;
-  end;
-
-  procedure StandartOrder(pTemp: pSTreeNode; tabs: integer);
-  var
-    i: integer;
-  begin
-    if (pTemp <> nil) then
-      with pTemp^ do
-      begin
-        StandartOrder(pTemp^.left, tabs + 4);
-        for i := 0 to tabs do
-          Write(' ');
-        WriteLn('   /');
-        for i := 0 to tabs do
-          Write(' ');
-        WriteLn('  ', pTemp^.key, ' (', pTemp^.kol, ')');
-        for i := 0 to tabs do
-          Write(' ');
-        WriteLn('   \');
-        StandartOrder(pTemp^.right, tabs + 4);
-      end;
   end;
 
   procedure Pop(sKey: integer);
@@ -283,7 +283,7 @@ begin
         WriteLn('Успешно добавлено.');
         WriteLn;
       end;
-      3: Print(pRoot, 0);
+      3: Print; //(pRoot, 0);
       4:
       begin
         Write('Введите ключ вершины для удаления: ');

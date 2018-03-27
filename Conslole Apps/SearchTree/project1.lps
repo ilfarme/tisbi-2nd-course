@@ -3,18 +3,27 @@
   <ProjectSession>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="1">
+    <Units Count="2">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="6"/>
-        <CursorPos X="26" Y="190"/>
+        <TopLine Value="75"/>
+        <CursorPos X="22" Y="128"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="../../../../../Desktop/Дерево/project1.lpr"/>
+        <UnitName Value="Dvoichnoe_derevo"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="131"/>
+        <CursorPos X="5" Y="53"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit1>
     </Units>
-    <JumpHistory Count="26" HistoryIndex="25">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="project1.lpr"/>
         <Caret Line="17" Column="12" TopLine="4"/>
@@ -119,6 +128,22 @@
         <Filename Value="project1.lpr"/>
         <Caret Line="115" Column="57" TopLine="108"/>
       </Position26>
+      <Position27>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="190" Column="26" TopLine="5"/>
+      </Position27>
+      <Position28>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="120" Column="7" TopLine="97"/>
+      </Position28>
+      <Position29>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="77" Column="28" TopLine="65"/>
+      </Position29>
+      <Position30>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="89" Column="29" TopLine="77"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
