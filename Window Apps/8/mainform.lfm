@@ -1,0 +1,98 @@
+object Form1: TForm1
+  Left = 724
+  Height = 450
+  Top = 118
+  Width = 595
+  BorderStyle = bsToolWindow
+  Caption = 'Form1'
+  ClientHeight = 430
+  ClientWidth = 595
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.8.2.0'
+  object background: TImage
+    Left = 0
+    Height = 430
+    Top = 0
+    Width = 595
+    Align = alClient
+  end
+  object createContainer: TButton
+    Left = 168
+    Height = 25
+    Top = 392
+    Width = 110
+    Caption = 'Создать контейнер'
+    OnClick = createContainerClick
+    TabOrder = 0
+  end
+  object createFullContainer: TButton
+    Left = 336
+    Height = 25
+    Top = 392
+    Width = 75
+    Caption = 'Заполненый'
+    OnClick = createFullContainerClick
+    TabOrder = 1
+  end
+  object MainMenu1: TMainMenu
+    object menuCreate: TMenuItem
+      Caption = 'Создать'
+      object menuCreateCircle: TMenuItem
+        Caption = 'Круг'
+        OnClick = menuCreateCircleClick
+      end
+      object menuCreateRect: TMenuItem
+        Caption = 'Прямоугольник'
+        OnClick = menuCreateRectClick
+      end
+      object menuCreateElleps: TMenuItem
+        Caption = 'Эллипс'
+        OnClick = menuCreateEllepsClick
+      end
+    end
+    object menuMove: TMenuItem
+      Caption = 'Переместить'
+      object menuMoveCircle: TMenuItem
+        Caption = 'Круг'
+        OnClick = menuMoveCircleClick
+      end
+      object menuMoveRect: TMenuItem
+        Caption = 'Прямоугольник'
+        OnClick = menuMoveRectClick
+      end
+      object menuMoveElleps: TMenuItem
+        Caption = 'Эллипс'
+        OnClick = menuMoveEllepsClick
+      end
+    end
+    object menuRotate: TMenuItem
+      Caption = 'Повернуть'
+      OnClick = menuRotateClick
+    end
+    object menuContainerObj: TMenuItem
+      Caption = 'Объект контейнера'
+      object menuContainerObjAdd: TMenuItem
+        Caption = 'Добавить'
+        OnClick = menuContainerObjAddClick
+      end
+      object menuContainerObjDelete: TMenuItem
+        Caption = 'Удалить'
+        OnClick = menuContainerObjDeleteClick
+      end
+      object menuContainerObjMoveTo: TMenuItem
+        Caption = 'Переместить'
+        OnClick = menuContainerObjMoveToClick
+      end
+      object menuContainerObjDestroy: TMenuItem
+        Caption = 'Уничтожить контейнер'
+        OnClick = menuContainerObjDestroyClick
+      end
+    end
+    object menuExit: TMenuItem
+      Caption = 'Выход'
+      OnClick = menuExitClick
+    end
+  end
+end

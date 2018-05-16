@@ -1,0 +1,64 @@
+object Form1: TForm1
+  Left = 367
+  Height = 428
+  Top = 178
+  Width = 601
+  BorderStyle = bsToolWindow
+  Caption = 'Form1'
+  ClientHeight = 408
+  ClientWidth = 601
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.8.2.0'
+  object background: TImage
+    Left = 0
+    Height = 408
+    Top = 0
+    Width = 601
+    Align = alClient
+  end
+  object createContainerBtn: TButton
+    Left = 32
+    Height = 25
+    Top = 376
+    Width = 160
+    Caption = 'Создать пустой контейнер'
+    OnClick = createContainerBtnClick
+    TabOrder = 0
+  end
+  object createFullContainer: TButton
+    Left = 232
+    Height = 25
+    Top = 376
+    Width = 339
+    Caption = 'Создать контейнер, заполненный случайными фигурами'
+    OnClick = createFullContainerClick
+    TabOrder = 1
+  end
+  object MainMenu1: TMainMenu
+    object menuContainer: TMenuItem
+      Caption = 'Объект контейнера'
+      object menuCreate: TMenuItem
+        Caption = 'Добавить'
+        OnClick = menuCreateClick
+      end
+      object menuDelete: TMenuItem
+        Caption = 'Удалить'
+        OnClick = menuDeleteClick
+      end
+      object menuMoveTo: TMenuItem
+        Caption = 'Переместить'
+        OnClick = menuMoveToClick
+      end
+      object menuDestroyAll: TMenuItem
+        Caption = 'Уничтожить контейнер'
+        OnClick = menuDestroyAllClick
+      end
+    end
+    object menuExit: TMenuItem
+      Caption = 'Выход'
+      OnClick = menuExitClick
+    end
+  end
+end
