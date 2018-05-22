@@ -22,8 +22,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="58"/>
-        <CursorPos X="30" Y="60"/>
+        <CursorPos X="11" Y="10"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -32,7 +31,7 @@
         <Filename Value="circle.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="5"/>
+        <TopLine Value="16"/>
         <CursorPos X="35" Y="14"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
@@ -64,7 +63,7 @@
         <Filename Value="ellipse.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="3"/>
+        <TopLine Value="15"/>
         <CursorPos X="32" Y="15"/>
         <UsageCount Value="31"/>
         <Loaded Value="True"/>
@@ -73,6 +72,7 @@
         <Filename Value="container.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
+        <TopLine Value="53"/>
         <CursorPos X="13" Y="16"/>
         <UsageCount Value="28"/>
         <Loaded Value="True"/>
